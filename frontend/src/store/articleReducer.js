@@ -1,15 +1,19 @@
-import articles from '../data/data.json';
+
 
 const LOAD_ARTICLES = 'article/loadArticles';
-const ADD_ARTICLE = 'article/addArticle';
-
-export const loadArticles = () => {
+export const loadArticles = (articles) => {
   return {
     type: LOAD_ARTICLES,
     articles
   };
 };
+export const fetchArticles = () => async dispatch => {
+  const response = await fetch('/api/articles');
+  const articles = await response.json();//conver the reponse to readable formate.
+  dispatch(loadArticles(articles));
+}
 
+const ADD_ARTICLE = 'article/addArticle';
 export const addArticle = (article) => {
   return {
     type: ADD_ARTICLE,

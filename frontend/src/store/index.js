@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import fruitReducer from './fruitReducer';
 import articleReducer from './articleReducer';
-import { thunk } from 'redux-thunk';
+import thunk from 'redux-thunk';
 
 // `combineReducers` combines all the reducer functions into one big reducer
 // function, which is typically called `rootReducer`. This is the most important
