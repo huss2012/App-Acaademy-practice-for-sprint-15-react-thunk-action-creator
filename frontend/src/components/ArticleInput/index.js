@@ -12,7 +12,7 @@ const ArticleInput = () => {
 
   const dispatch = useDispatch();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const newArticle = {
       //id: nanoid(),
@@ -21,7 +21,7 @@ const ArticleInput = () => {
       imageUrl
     };
 
-    dispatch(writeArticle(newArticle));
+    await dispatch(writeArticle(newArticle));
     reset();
   };
 
